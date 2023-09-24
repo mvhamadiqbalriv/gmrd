@@ -16,9 +16,13 @@ class LkhController extends Controller
         $skpd = api_desa_post('skpd', null);
         $skpd = $skpd ? $skpd->data : null;
 
+        $state = api_desa_post('list_state', null);
+        $state = $state ? $state->data : null;
+
         return view('pages.lkh.data', [
             'lkh' => $lkh,
-            'skpd' => $skpd
+            'skpd' => $skpd,
+            'states' => $state
         ]);
     }
 }

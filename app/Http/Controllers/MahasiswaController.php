@@ -17,16 +17,20 @@ class MahasiswaController extends Controller
         $skpd = api_desa_post('skpd', null);
         $skpd = $skpd ? $skpd->data : null;
 
+        $state = api_desa_post('list_state', null);
+        $state = $state ? $state->data : null;
+
         return view('pages.mahasiswa.data', [
             'mahasiswa' => $mahasiswa,
-            'skpd' => $skpd
+            'skpd' => $skpd,
+            'states' => $state
         ]);
     }
 
     public function detail($id = null)
     {
         if ($id) {
-            
+
             $detail = api_desa_post('detail', ['id' => $id]);
             $detail = $detail ? $detail->data : null;
 

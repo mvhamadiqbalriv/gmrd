@@ -2,11 +2,12 @@
     $nip = isset($_GET['nip']) ? $_GET['nip'] : null;
     $nama_lengkap = isset($_GET['nama_lengkap']) ? $_GET['nama_lengkap'] : null;
     $id_skpd = isset($_GET['id_skpd']) ? $_GET['id_skpd'] : null;
+    $state = isset($_GET['state']) ? $_GET['state'] : null;
 @endphp
 @push('styles')
 <link href="{{asset('vendor/select2/select2.min.css')}}" rel="stylesheet" />
 <style>
-  .highlight-nip{ 
+  .highlight-nip{
     content: '';
     /* position: absolute; */
     z-index: -1;
@@ -17,7 +18,7 @@
     transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
     background-color: #fed700;
   }
-  .highlight-nama-lengkap{ 
+  .highlight-nama-lengkap{
     content: '';
     /* position: absolute; */
     z-index: -1;
@@ -48,7 +49,7 @@
           $('#nama_skpd_').html(detail.nama_skpd);
         }
       });
-      
+
       $('#detail').appendTo('body').modal('show');
   }
 
@@ -89,7 +90,7 @@
 @endpush
 
 @push('title')
-    Mahasiswa - 
+    Mahasiswa -
 @endpush
 <x-app-layout>
     <x-slot name="header_content">
@@ -125,7 +126,18 @@
                     <select name="id_skpd" class="form-control select2">
                         <option value="">-- Pilih Desa --</option>
                         @foreach ($skpd as $item)
-                          <option value="{{$item->id_skpd}}" {{($item->id_skpd = $id_skpd) ? 'selected' : null}} >{{$item->nama_skpd}}</option>
+                          <option value="{{$item->id_skpd}}" {{($item->id_skpd == $id_skpd) ? 'selected' : null}} >{{$item->nama_skpd}}</option>
+                        @endforeach
+                    </select>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label">Universitas</label>
+                    <select name="state" class="form-control select2">
+                        <option value="">-- Pilih Universitas --</option>
+                        @foreach ($states as $item)
+                          <option value="{{$item}}" {{($item == $state) ? 'selected' : null}} >{{ucwords(str_replace('_', ' ', str_replace('kkn_', '', $item)))}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -134,7 +146,7 @@
                 <div class="form-group">
                     <br>
                     <button type="submit" value="1" name="filter"
-                        class="btn btn-primary btn-lg m-t-5 btn-outline"><i
+                        class="btn btn-primary btn-lg m-t-2 btn-outline"><i
                             class="ti-filter"></i>Filter</button>
                     {{-- <button type="submit" value="1" name="download" class="btn btn-primary m-t-5"><i
                             class="ti-download"></i>Download PDF</button>
@@ -144,7 +156,7 @@
             </div>
             </div>
           </form>
-        </div> 
+        </div>
       </div>
         <div class="row" id="content">
             <div class="col-12">
@@ -155,7 +167,7 @@
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-striped" id="table-1">
-                      <thead>                                 
+                      <thead>
                         <tr>
                           <th class="text-center">
                             #
@@ -182,11 +194,11 @@
                               <td>{{$item->nama_skpd}}</td>
                               <td><a href="#" onclick="showDetail({{$item->id_pegawai}})" class="btn btn-secondary">Detail</a></td>
                             </tr>
-                          @endforeach     
-                        @else 
+                          @endforeach
+                        @else
                           <tr>
-                            <td colspan="100%">Belum ada data</td>  
-                          </tr>                            
+                            <td colspan="100%">Pilih universitas terlebih dahulu!</td>
+                          </tr>
                         @endif
                       </tbody>
                     </table>

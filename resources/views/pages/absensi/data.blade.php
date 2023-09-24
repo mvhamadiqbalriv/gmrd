@@ -7,6 +7,12 @@
 @push('title')
     Absensi -
 @endpush
+@php
+    $bulan = isset($_GET['bulan']) ? $_GET['bulan'] : null;
+    $tahun = isset($_GET['tahun']) ? $_GET['id_skpd'] : null;
+    $id_skpd = isset($_GET['id_skpd']) ? $_GET['id_skpd'] : null;
+    $state = isset($_GET['state']) ? $_GET['state'] : null;
+@endphp
 <x-app-layout>
     <x-slot name="header_content">
         <h1>{{ __('Data Absensi') }}</h1>
@@ -18,24 +24,12 @@
         </div>
     </x-slot>
     <div>
-        
+
         <div class="card">
           <div class="container-fluid">
             <form method="GET">
               <div class="row mt-3">
-                <div class="col-md-3">
-                  <div class="form-group">
-                      <label class="control-label">Desa</label>
-                      <select name="id_skpd" class="form-control select2">
-                          <option value="">-- Pilih Desa --</option>
-                          @foreach ($absensi->skpd as $item)
-                            <option value="{{$item->id_skpd}}" {{isset($_GET['id_skpd']) ? (($_GET['id_skpd'] == $item->id_skpd) ? 'selected' : null) : null}} >{{$item->nama_skpd}}</option>
-                          @endforeach
-                      </select>
-                  </div>
-                </div>
                 <div class="col-md-2">
-
                     <div class="form-group">
                         <label class="control-label"> Bulan</label>
                         <select class="form-control select2" name="bulan" id="bulan">
@@ -52,8 +46,6 @@
                     </div>
                 </div>
                 <div class="col-md-2">
-
-
                     <div class="form-group">
                         <label class="control-label"> Tahun</label>
                         <select class="form-control select2" id="tahun" name="tahun">
@@ -64,6 +56,28 @@
                                   echo "<option $selected value='$i' >$i</option>";
                               }
                           ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                      <label class="control-label">Desa</label>
+                      <select name="id_skpd" class="form-control select2">
+                          <option value="">-- Pilih Desa --</option>
+                          @foreach ($absensi->skpd as $item)
+                            <option value="{{$item->id_skpd}}" {{isset($_GET['id_skpd']) ? (($_GET['id_skpd'] == $item->id_skpd) ? 'selected' : null) : null}} >{{$item->nama_skpd}}</option>
+                          @endforeach
+                      </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label class="control-label">Universitas</label>
+                        <select name="state" class="form-control select2">
+                            <option value="">-- Pilih Universitas --</option>
+                            @foreach ($states as $item)
+                              <option value="{{$item}}" {{($item == $state) ? 'selected' : null}} >{{ucwords(str_replace('_', ' ', str_replace('kkn_', '', $item)))}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -81,7 +95,7 @@
               </div>
               </div>
             </form>
-          </div> 
+          </div>
         </div>
 
       <div class="row">
@@ -127,17 +141,17 @@
                                       </td>
                                   </tr>
                                   @endforeach
-                                @else 
+                                @else
                                 <tr>
                                     <td colspan="100%">
                                         @if (isset($_GET['id_skpd']))
-                                            @if ($_GET['id_skpd'] != null)
+                                            @if ($_GET['id_skpd'] != null && $_GET['state'] != null)
                                                 Belum ada data
-                                            @else 
-                                                Pilih desa terlebih dahulu
+                                            @else
+                                                Pilih desa dan universitas terlebih dahulu
                                             @endif
                                         @else
-                                            Pilih desa terlebih dahulu
+                                            Pilih desa dan universitas terlebih dahulu
                                         @endif
                                     </td>
                                 </tr>

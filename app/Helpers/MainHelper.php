@@ -44,7 +44,7 @@ if (!function_exists('create_button')) {
 }
 
 if (!function_exists('api_desa_post')) {
-    
+
     function api_desa_post ($endpoint,$params)
     {
         $client = new Client();
@@ -53,7 +53,7 @@ if (!function_exists('api_desa_post')) {
         $url = $main_url.$endpoint;
 
         $params['kkn_key'] = 'KuliahBsiAJA!';
-        $params['state'] = 'kkn_ipdn';
+        $params['state'] = $params['state'] ?? null;
 
         try {
             $res = $client->request('POST', $url, [
@@ -78,7 +78,7 @@ if (!function_exists('api_desa_post')) {
 
         return $result;
     }
-    
+
     function api_desa_get ($endpoint,$params)
     {
         $client = new Client();
@@ -119,7 +119,7 @@ function percentage($jumlah,$total)
 {
     $result = ($jumlah / $total) * 100;
     $result = number_format($result, 2);
-    
+
     if ($result > 50) {
         $badge = 'text-success';
     }else{

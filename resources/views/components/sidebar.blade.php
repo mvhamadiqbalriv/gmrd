@@ -26,8 +26,8 @@ $links = [
                     ["href" => "mahasiswa", "text" => "Mahasiswa"],
                     ["href" => "absensi", "text" => "Absensi"],
                     ["href" => "lkh", "text" => "Laporan Kinerja Harian"],
-                    ["href" => "laporan-surat", "text" => "Laporan Surat"],
-                    ["href" => "desa-cantik", "text" => "Desa Cantik"],
+                    // ["href" => "laporan-surat", "text" => "Laporan Surat"],
+                    // ["href" => "desa-cantik", "text" => "Desa Cantik"],
                 ]
             ]
         ],
@@ -41,11 +41,11 @@ $navigation_links = array_to_object($links);
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="{{ route('dashboard') }}">IPDN</a>
+            <a href="{{ route('dashboard') }}">GMRD</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="{{ route('dashboard') }}">
-                <img class="d-inline-block" width="32px" height="30.61px" src="{{asset('stisla/logo_ipdn.png')}}" alt="">
+                <img class="d-inline-block" width="32px" height="30.61px" src="{{asset('stisla/logo_pemda.png')}}" alt="">
             </a>
         </div>
         @foreach ($navigation_links as $link)

@@ -8,7 +8,7 @@
     </div>
 
     <div class="mt-6 text-gray-500">
-        Aplikasi KKN IPDN merupakan aplikasi yang dibuat untuk memudahkan dalam memonitoring kegiatan KKN mahasiswa IPDN yang disebar di desa-desa yang ada di Kabupaten Sumedang.
+        Aplikasi GMRD merupakan aplikasi yang dibuat untuk memudahkan dalam memonitoring kegiatan mahasiswa dalam <b>Gotong Royong Membangung Desa</b> yang disebar di desa-desa yang ada di Kabupaten Sumedang.
     </div>
 </div>
 
@@ -21,14 +21,14 @@
 
         <div class="ml-12">
             <div class="mt-2 text-sm text-gray-500">
-                Menu ini menampilkan data seluruh mahasiswa IPDN yang mengikuti KKN di desa-desa yang ada di Kabupaten Sumedang dari mulai Nama, NIM, dan Desa.
+                Menu ini menampilkan data seluruh mahasiswa yang ikut dalam program GMRD di desa-desa yang ada di Kabupaten Sumedang dari mulai Nama, NIM, dan Desa.
             </div>
 
             <a href="{{url('mahasiswa')}}">
-                <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
+                <div class="mt-3 flex items-center text-sm font-semibold text-success-700">
                         <div>Lihat selengkapnya</div>
 
-                        <div class="ml-1 text-indigo-500">
+                        <div class="ml-1 text-success-500">
                             <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </div>
                 </div>
@@ -48,10 +48,10 @@
             </div>
 
             <a href="{{url('absensi')}}">
-                <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
+                <div class="mt-3 flex items-center text-sm font-semibold text-success-700">
                         <div>Lihat selengkapnya</div>
 
-                        <div class="ml-1 text-indigo-500">
+                        <div class="ml-1 text-success-500">
                             <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </div>
                 </div>
@@ -67,14 +67,14 @@
 
         <div class="ml-12">
             <div class="mt-2 text-sm text-gray-500">
-                Menu ini menampilkan rekapitulasi Laporan Kinerja Harian Mahasiswa dalam bentuk tabel. 
+                Menu ini menampilkan rekapitulasi Laporan Kinerja Harian Mahasiswa dalam bentuk tabel.
             </div>
 
             <a href="{{url('lkh')}}">
-                <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
+                <div class="mt-3 flex items-center text-sm font-semibold text-success-700">
                         <div>Lihat selengkapnya</div>
 
-                        <div class="ml-1 text-indigo-500">
+                        <div class="ml-1 text-success-500">
                             <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </div>
                 </div>

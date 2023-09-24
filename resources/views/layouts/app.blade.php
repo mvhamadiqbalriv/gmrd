@@ -13,7 +13,7 @@
 
         <!-- Styles -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@400;600;700&family=Open+Sans&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" href="{{ asset('stisla/logo_ipdn.png') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('stisla/logo_pemda.png') }}" type="image/x-icon">
         <link rel="stylesheet" href="{{ asset('vendor/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/tailwind.css') }}">
         <link rel="stylesheet" href="{{ asset('stisla/css/style.css') }}">

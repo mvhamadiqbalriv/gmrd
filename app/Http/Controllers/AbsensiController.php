@@ -13,8 +13,12 @@ class AbsensiController extends Controller
         $absensi = api_desa_post('absensi', $params);
         $absensi = $absensi ? $absensi->data : null;
 
+        $state = api_desa_post('list_state', null);
+        $state = $state ? $state->data : null;
+
         return view('pages.absensi.data', [
-            'absensi' => $absensi
+            'absensi' => $absensi,
+            'states' => $state
         ]);
     }
 }

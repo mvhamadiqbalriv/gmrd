@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return redirect('login');
+    return view("pages.landing");
 });
 
 Route::group([ "middleware" => ['auth:sanctum', 'verified'] ], function() {

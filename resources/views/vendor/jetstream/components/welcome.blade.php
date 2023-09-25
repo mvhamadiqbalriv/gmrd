@@ -8,7 +8,7 @@
     </div>
 
     <div class="mt-6 text-gray-500">
-        Aplikasi GMRD merupakan aplikasi yang dibuat untuk memudahkan dalam memonitoring kegiatan mahasiswa dalam <b>Gotong Royong Membangung Desa</b> yang disebar di desa-desa yang ada di Kabupaten Sumedang.
+        Aplikasi GRMD merupakan aplikasi yang dibuat untuk memudahkan dalam memonitoring kegiatan mahasiswa dalam <b>Gotong Royong Membangung Desa</b> yang disebar di desa-desa yang ada di Kabupaten Sumedang.
     </div>
 </div>
 
@@ -21,7 +21,7 @@
 
         <div class="ml-12">
             <div class="mt-2 text-sm text-gray-500">
-                Menu ini menampilkan data seluruh mahasiswa yang ikut dalam program GMRD di desa-desa yang ada di Kabupaten Sumedang dari mulai Nama, NIM, dan Desa.
+                Menu ini menampilkan data seluruh mahasiswa yang ikut dalam program GRMD di desa-desa yang ada di Kabupaten Sumedang dari mulai Nama, NIM, dan Desa.
             </div>
 
             <a href="{{url('mahasiswa')}}">
